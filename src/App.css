@@ -1,0 +1,36 @@
+.btn {
+  color: tomato;
+  border: 2px solid tomato;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn::after {
+  content: "";
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: tomato;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(120px);
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+}
+
+.btn:hover:after {
+  transform: translateX(0);
+}
